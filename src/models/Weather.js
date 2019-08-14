@@ -25,7 +25,8 @@ function getCurrentData(city, cc) {
   // console.log({cc, city});
   const query = `${city},${cc}`;
   console.log(`From getCurrentData: ${query}`);
-  const result = axios.get('/weather', {params: {q: query, "APPID": 'fda1843372e767c6f33d35ea8eae9667'}})
+  // const result = axios.get('/weather', {params: {q: query, APPID: process.env.APPKey}})
+  const result = axios.get('/weather', {params: {q: query}})
     // .then(function (response) {
     //   console.log(response);
     // });
@@ -35,5 +36,6 @@ function getCurrentData(city, cc) {
 
 function getForecastData() {
   const query = `${city},${cc}`;
-  return  axios.get('/forecast', {params: {q: query, APPID: process.env.APPID} });
+  const result = axios.get('/weather', {params: {q: query}});
+  return result;
 }

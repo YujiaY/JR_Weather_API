@@ -5,7 +5,7 @@ const instance = axios.create({
   // method: 'get', // default
   // timeout: 1000,
   params: {
-    APPID: process.env.APPID,
+    appid: process.env.APPID,
   }
 });
 
